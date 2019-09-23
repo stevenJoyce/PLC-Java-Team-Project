@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="SuperServicesLtdClass">
+  <ClassDiagramComponents>
+    <Class name="Customer" package="" visibility="public" xPosition="14.0" yPosition="26.0">
+      <Fields>
+        <Field name="firstName" type="String" visibility="private"/>
+        <Field name="surname" type="String" visibility="private"/>
+        <Field name="gender" type="String" visibility="private"/>
+        <Field name="age" type="int" visibility="private"/>
+        <Field name="IfOther" type="String" visibility="private"/>
+        <Field name="smoker" type="boolean" visibility="private"/>
+        <Field name="healthCondition" type="ArrayList" visibility="private"/>
+        <Field name="policy" type="Policy" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="setFirstName" returnType="String" visibility="public">
+          <Argument type="String" name="firstName"/>
+        </Method>
+        <Method name="setSurname" returnType="String" visibility="public">
+          <Argument type="String" name="surname"/>
+        </Method>
+        <Method name="setGender" returnType="String" visibility="public">
+          <Argument type="String" name="gender"/>
+        </Method>
+        <Method name="setAge" returnType="int" visibility="public">
+          <Argument type="int" name="age"/>
+        </Method>
+        <Method name="setIfOther" returnType="String" visibility="public">
+          <Argument type="String" name="ifOther"/>
+        </Method>
+        <Method name="setSmoker" returnType="boolean" visibility="public">
+          <Argument type="boolean" name="smoker"/>
+        </Method>
+        <Method name="setHealthCondition" returnType="ArrayList" visibility="public">
+          <Argument type="ArrayList" name="healthCondition"/>
+        </Method>
+        <Method name="getFirstName" returnType="String" visibility="public"/>
+        <Method name="getsetSurname" returnType="String" visibility="public"/>
+        <Method name="getGender" returnType="String" visibility="public"/>
+        <Method name="getAge" returnType="int" visibility="public"/>
+        <Method name="getIfOther" returnType="String" visibility="public"/>
+        <Method name="getSmoker" returnType="boolean" visibility="public"/>
+        <Method name="getHealthConditions" returnType="ArrayList" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="assignPolicyToCustomer" returnType="Policy" visibility="public">
+          <Argument type="Policy" name="policy"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="IndividualPolicy" package="" visibility="public" xPosition="372.0" yPosition="549.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="policyId"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calculatePolicy" returnType="Customer" visibility="public">
+          <Argument type="Customer" name="customer"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Policy" package="" visibility="public" xPosition="463.0" yPosition="25.0">
+      <Fields>
+        <Field name="hospitalCover" type="String" visibility="private"/>
+        <Field name="dailyExpenses" type="String" visibility="private"/>
+        <Field name="policyId" type="int" visibility="private"/>
+        <Field name="total" type="float" visibility="private"/>
+        <Field name="policyType" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="policyId"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setHospitalCover" returnType="String" visibility="public">
+          <Argument type="String" name="hospitalCover"/>
+        </Method>
+        <Method name="setDailyExpenses" returnType="String" visibility="public">
+          <Argument type="String" name="dailyExpenses"/>
+        </Method>
+        <Method name="setPolicyId" returnType="int" visibility="public">
+          <Argument type="int" name="policyId"/>
+        </Method>
+        <Method name="setTotal" returnType="float" visibility="public">
+          <Argument type="float" name="total"/>
+        </Method>
+        <Method name="getHospitalCover" returnType="String" visibility="public"/>
+        <Method name="getDailyExpenses" returnType="String" visibility="public"/>
+        <Method name="getIdNumber" returnType="int" visibility="public"/>
+        <Method name="getTotal" returnType="float" visibility="public"/>
+        <Method name="setPolicyType" returnType="String" visibility="public">
+          <Argument type="String" name="policyType"/>
+        </Method>
+        <Method name="getPolicyType" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="calculatePolicy" returnType="Customer" visibility="public">
+          <Argument type="Customer" name="customer"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CorporatePolicy" package="" visibility="public" xPosition="711.0" yPosition="549.0">
+      <Fields>
+        <Field name="corpDiscount" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="policyId"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setCorpDiscount" returnType="float" visibility="public">
+          <Argument type="float" name="corpDiscount"/>
+        </Method>
+        <Method name="getCorpDiscount" returnType="float" visibility="public"/>
+        <Method name="calculateCorpPolicy" returnType="Customer" visibility="public">
+          <Argument type="Customer" name="customer"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="IndividualPolicy" target="Policy"/>
+    <IsRelation name="is" source="CorporatePolicy" target="Policy"/>
+    <HasRelation name="Policy" source="Customer" target="Policy" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
